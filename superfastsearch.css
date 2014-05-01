@@ -1,0 +1,69 @@
+/*
+	Superfastsearch - superfastsearch.css
+	Copyright 2014  Creatomatic Ltd.  GPLv2
+*/
+
+.superfastsearch {
+	position: relative;
+
+	text-align: left;
+}
+
+
+.superfastsearch_results {
+	position: absolute;
+	z-index: 100;
+
+	top: 40px;
+	left: 0px;
+
+	background-color: #fff;
+
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+
+	box-shadow: 5px 3px 10px #777;
+}
+
+
+.sfs_result_show {
+	display: block !important;
+}
+
+
+.sfs_result {
+	padding: 5px;
+
+	/* runtime hide */
+	display: none;
+}
+
+.sfs_post_title {
+	padding: 5px;
+
+	font-weight: bold;
+
+	/* runtime hide */
+	display: none;
+}
+
+a.sfs_result {
+	border-bottom: 1px solid #eee;
+
+	text-align: left;
+}
+
+
+.superfastsearch_results,
+.superfastsearch_input {
+	width: 200px;
+
+}
+
+.superfastsearch_powered {
+	font-size: 12px;
+	text-align: right;
+
+	/* runtime hide */
+	display: none;
+}
