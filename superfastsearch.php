@@ -37,18 +37,23 @@ function superfastsearch ( $atts, $content = null ) {
 
 
 	$html = "
-		<div class=\"superfastsearch\">
-			<form name=\"superfastsearch\" method=\"get\" action=\"" . site_url() . "\">
-				<input class=\"superfastsearch_input\" name=\"s\" type=\"text\" placeholder=\"" . htmlentities( $conf["placeholder"] ) . "\" title=\"" . htmlentities( $conf["placeholder"] ) . "\" autocomplete=\"off\" autocorrect=\"off\" spellcheck=\"false\" />
-			</form>
+		<div class=\"superfastsearch_outer\">
+
+			<div class=\"superfastsearch_title\">" . $conf["title"] . "</div>
+
+			<div class=\"superfastsearch\">
+
+				<form name=\"superfastsearch\" method=\"get\" action=\"" . site_url() . "\">
+					<input class=\"superfastsearch_input\" name=\"s\" type=\"text\" placeholder=\"" . htmlentities( $conf["placeholder"] ) . "\" title=\"" . htmlentities( $conf["placeholder"] ) . "\" autocomplete=\"off\" autocorrect=\"off\" spellcheck=\"false\" />
+				</form>
 		
-			<div class=\"superfastsearch_results\">
+				<div class=\"superfastsearch_results\">
 ";
 
 	if( $conf["post_titles"] == "true" ) {
 
 		$html .= "
-				<div class=\"sfs_post_title\">Pages</div>";
+					<div class=\"sfs_post_title\">Pages</div>";
 	}
 
 	$args = array (
@@ -63,19 +68,20 @@ function superfastsearch ( $atts, $content = null ) {
 
 	foreach ($possible_results as $single) {
 		$html .= "
-				<a href=\"" . get_permalink($single->ID) . "\" title=\"" . htmlentities( strtolower($single->post_title) ) . "\" class=\"sfs_result\">" . htmlentities($single->post_title) . "</a>";
+					<a href=\"" . get_permalink($single->ID) . "\" title=\"" . htmlentities( strtolower($single->post_title) ) . "\" class=\"sfs_result\">" . htmlentities($single->post_title) . "</a>";
 	}
 
 
 	if($conf["show_powered_by"] == "true")
 		$html .= "
-				<div class=\"superfastsearch_powered\">Powered by <a target=\"_blank\" href=\"http://superfastsearch.co.uk/\">Super Fast Search</a></div>
+					<div class=\"superfastsearch_powered\">Powered by <a target=\"_blank\" href=\"http://superfastsearch.co.uk/\">Super Fast Search</a></div>
 ";
 
 
 	$html .= "
-			</div>
-		</div>
+				</div><!-- end superfastsearch_results -->
+			</div><!-- end superfastsearch -->
+		</div><!-- end superfastsearch_outer -->
 ";
 
 	return $html;

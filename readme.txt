@@ -54,6 +54,10 @@ See http://superfastsearch.co.uk/
 
 == Changelog ==
 
+= 1.1 =
+
+- Title bugfix
+
 = 1.0 =
 
 - Initial build
