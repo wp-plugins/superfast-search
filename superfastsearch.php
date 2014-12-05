@@ -60,15 +60,19 @@ function superfastsearch ( $atts, $content = null ) {
 		"post_type"     => "page",
 		"numberposts"   => -1,
 		"orderby"       => "asc",
+		"fields"        => "ids",
 	);
 
 	$possible_results = get_posts( $args );
 
 	//print_r( $possible_results );
 
-	foreach ($possible_results as $single) {
+	foreach ($possible_results as $single_id) {
+
+		$title = get_the_title($single_id);
+
 		$html .= "
-					<a href=\"" . get_permalink($single->ID) . "\" title=\"" . htmlentities( strtolower($single->post_title) ) . "\" class=\"sfs_result\">" . htmlentities($single->post_title) . "</a>";
+					<a href=\"" . get_permalink($single_id) . "\" title=\"" . strtolower($title) . " " . get_post_meta($single_id, "keywords", true) . "\" class=\"sfs_result\">" . $title . "</a>";
 	}
 
 

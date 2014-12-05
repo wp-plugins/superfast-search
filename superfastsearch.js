@@ -100,6 +100,8 @@ jQuery(document).ready(function(){
 	// the search
 	jQuery(".superfastsearch_input").keyup(function() {
 
+		var this_instance = jQuery(this).parent().parent();
+
 		// hide any prev results
 		jQuery(".superfastsearch_results a").removeClass("sfs_result_show");
 
@@ -114,13 +116,13 @@ jQuery(document).ready(function(){
 
 			// search + show
 			searched = jQuery(this).val().toLowerCase();
-			jQuery('.superfastsearch_results a[title*="' + searched + '"]').slice(0,5).addClass("sfs_result_show");
+			jQuery(this_instance).find('.superfastsearch_results a[title*="' + searched + '"]').addClass("sfs_result_show");
 		}
 
 
 
 		// say credits if there are results (and credits are enabled)
-		if( jQuery(".superfastsearch_results a.sfs_result_show").length != 0 ) {
+		if( jQuery(this_instance).find(".superfastsearch_results a.sfs_result_show").length != 0 ) {
 
 			// reverse
 			//jQuery(".sfs_post_title").css("display", "block");
@@ -154,7 +156,7 @@ jQuery(document).ready(function(){
 
 
 
-			jQuery(".superfastsearch_powered").css("display", "block");
+			jQuery(this_instance).find(".superfastsearch_powered").css("display", "block");
 
 		}
 	});

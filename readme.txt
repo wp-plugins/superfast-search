@@ -3,8 +3,8 @@ Contributors: creatomatic
 Donate link: http://superfastsearch.co.uk/
 Tags: superfastsearch, search, super, fast, superfast, quick, instant, results, post, page, type, bar, widget, shortcode
 Requires at least: 3.0.1
-Tested up to: 3.9
-Stable tag: 1.0
+Tested up to: 4.1
+Stable tag: 1.3
 License: Copyright 2014  Creatomatic Ltd.  GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,10 @@ See http://superfastsearch.co.uk/
 1. Available  Widget page settings for the Basic version.
 
 == Changelog ==
+
+= 1.3 =
+
+- Memory fix on large number of posts.  Duplicate instances fix.  Added keywords meta field as well
 
 = 1.1 =
 
