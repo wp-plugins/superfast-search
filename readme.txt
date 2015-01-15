@@ -4,8 +4,8 @@ Donate link: http://superfastsearch.co.uk/
 Tags: superfastsearch, search, super, fast, superfast, quick, instant, results, post, page, type, bar, widget, shortcode
 Requires at least: 3.0.1
 Tested up to: 4.1
-Stable tag: 1.3
-License: Copyright 2014  Creatomatic Ltd.  GPLv2
+Stable tag: 1.5
+License: Copyright 2015  Creatomatic Ltd.  GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 The easy to use results-as-you-type search box.  Widget and shortcode.
@@ -53,6 +53,14 @@ See http://superfastsearch.co.uk/
 1. Available  Widget page settings for the Basic version.
 
 == Changelog ==
+
+= 1.5 =
+
+- jQuery dynamic loading update. 'title' attribute to 'alt' so it does not show on hover
+
+= 1.4 =
+
+- Improved memory further.  jQuery to allow dynamic loading
 
 = 1.3 =
 

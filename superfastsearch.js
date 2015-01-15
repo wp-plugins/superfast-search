@@ -1,6 +1,6 @@
 /*
 	Superfastsearch - superfastsearch.js
-	Copyright 2014  Creatomatic Ltd.  GPLv2
+	Copyright 2015  Creatomatic Ltd.  GPLv2
 */
 
 jQuery(document).ready(function(){
@@ -8,7 +8,7 @@ jQuery(document).ready(function(){
 	// disable empty search
 	jQuery(".superfastsearch form").submit(function() {
 
-		if ( jQuery(".superfastsearch_input").val() == "") {
+		if ( jQuery(this).find(".superfastsearch_input").val() == "") {
 			return false;
 		}
 	});
@@ -116,7 +116,7 @@ jQuery(document).ready(function(){
 
 			// search + show
 			searched = jQuery(this).val().toLowerCase();
-			jQuery(this_instance).find('.superfastsearch_results a[title*="' + searched + '"]').addClass("sfs_result_show");
+			jQuery(this_instance).find('.superfastsearch_results a[alt*="' + searched + '"]').addClass("sfs_result_show");
 		}
 
 

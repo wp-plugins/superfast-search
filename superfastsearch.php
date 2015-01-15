@@ -1,7 +1,7 @@
 <?php
 /*
 	Superfastsearch - superfastsearch.php
-	Copyright 2014  Creatomatic Ltd.  GPLv2
+	Copyright 2015  Creatomatic Ltd.  GPLv2
 */
 
 if(!defined("SUPERFASTSEARCH_VERSION"))
@@ -44,7 +44,7 @@ function superfastsearch ( $atts, $content = null ) {
 			<div class=\"superfastsearch\">
 
 				<form name=\"superfastsearch\" method=\"get\" action=\"" . site_url() . "\">
-					<input class=\"superfastsearch_input\" name=\"s\" type=\"text\" placeholder=\"" . htmlentities( $conf["placeholder"] ) . "\" title=\"" . htmlentities( $conf["placeholder"] ) . "\" autocomplete=\"off\" autocorrect=\"off\" spellcheck=\"false\" />
+					<input class=\"superfastsearch_input\" name=\"s\" type=\"text\" placeholder=\"" . htmlentities( $conf["placeholder"] ) . "\" alt=\"" . htmlentities( $conf["placeholder"] ) . "\" autocomplete=\"off\" autocorrect=\"off\" spellcheck=\"false\" />
 				</form>
 		
 				<div class=\"superfastsearch_results\">
@@ -72,7 +72,7 @@ function superfastsearch ( $atts, $content = null ) {
 		$title = get_the_title($single_id);
 
 		$html .= "
-					<a href=\"" . get_permalink($single_id) . "\" title=\"" . strtolower($title) . " " . get_post_meta($single_id, "keywords", true) . "\" class=\"sfs_result\">" . $title . "</a>";
+					<a href=\"" . get_permalink($single_id) . "\" alt=\"" . strtolower($title) . " " . get_post_meta($single_id, "keywords", true) . "\" class=\"sfs_result\">" . $title . "</a>";
 	}
 
 
