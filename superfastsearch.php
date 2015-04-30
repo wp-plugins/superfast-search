@@ -7,10 +7,17 @@
 if(!defined("SUPERFASTSEARCH_VERSION"))
 	return false;
 
-wp_enqueue_script("jquery");
+function superfastsearch_scripts() {
 
-wp_enqueue_script("superfastsearch", plugin_dir_url(__FILE__) . "superfastsearch.js",    array("jquery"));
-wp_enqueue_style ("superfastsearch", plugin_dir_url(__FILE__) . "superfastsearch.css" );
+	if( ! is_admin() ) {
+		wp_enqueue_script("jquery");
+
+		wp_enqueue_script("superfastsearch", plugin_dir_url(__FILE__) . "superfastsearch.js",    array("jquery"));
+		wp_enqueue_style ("superfastsearch", plugin_dir_url(__FILE__) . "superfastsearch.css");
+	}
+}
+
+add_action("wp_enqueue_scripts", "superfastsearch_scripts");
 
 
 // both widget and shortcode will call this with atts
